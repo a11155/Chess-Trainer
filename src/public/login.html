@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chess Quiz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/public/css/registration.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+         <link rel="icon" type="image/x-icon" href="/public/css/img/chess-logo.ico">
+    </head>
+    <body>
+        <section id="registerSection">
+         <div id="dialogoverlay" onclick=customAlert.ok()>   
+             </div>   
+                 <form action="/login" method="post" id="dialogbox" class="slit-in-vertical" >   
+                     <div>   
+                       <div id="dialogboxhead">  
+                         <img src="public/css/img/chess-logo1.png" >   
+                       </div>   
+                       <div id="dialogboxbody">   
+                           <p class="error-message" id="error_message"></p>   
+                           <input type="email" name="email" id="email" class="email-input" placeholder="Email"/>  
+                           <input type="password" name="password"   id="password" class="password-input" placeholder="Password"/>  
+                          <div class="grn_btn " onclick="sendLoginRequest(document.getElementById(`email`), document.getElementById(`password`))">  
+                            Log in   
+                         </div>  
+                         <a href="/registration"  > 
+                            New user? Register! 
+                        </a>   
+                       
+                       </div> 
+                       </div>  
+                    </div>
+                </form>
+          
+            </section>
+
+
+            <div class="footer-basic">
+                <footer>
+                    <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li ><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li>
+                        <li ><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="copyright">Chess Tactics © 2022
+                    </p>
+                </footer>
+            </div>
+
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      
+            <script>
+
+                
+function sendLoginRequest(email, password){
+  email = email.value;
+  password =  password.value;
+  
+  $.ajax('/login', {
+    type: 'POST',  // http method
+    data: { email: email, password : password }
+  })
+    .done( function (data, status, xhr) {
+        document.cookie = `accessToken=${data.accessToken}`;
+        document.cookie = `refreshToken=${data.refreshToken}`;
+
+        window.location.href = "/home";
+    })
+    .fail(function (jqXhr, textStatus, errorMessage) {
+      if(jqXhr.status == 400){
+        document.getElementById("error_message").innerHTML = "Incorrect Password";
+      }
+      else if(jqXhr.status == 404){
+        document.getElementById("error_message").innerHTML = "User with this email was not found";
+      }
+      else{
+        document.getElementById("error_message").innerHTML = "Unexpected Error";  
+      }
+    })
+
+}
+
+
+            </script>
+    </body>
+</html>

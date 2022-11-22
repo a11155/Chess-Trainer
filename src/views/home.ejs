@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chess Quiz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <link rel="stylesheet" href="/public/css/style.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+      <link rel="icon" type="image/x-icon" href="/public/css/img/chess-logo.ico">
+    </head>
+    <body>
+      
+        <%- include('partials/navbar') %>
+   
+ 
+       
+
+          <div class="content">
+
+            <section id="home">
+           <div class="home_container">
+              <h3 id="userName"></h3>
+              
+              <img src="public/css/img/chessboard1.png" class="chessboard_img">
+          
+              <div class="chess_welcome">
+                <h1>Play Chess<br>for Free<br>on the #1 Site!</h1>
+                <div  class="grn_btn home_btn" onclick="window.location='/play'">
+                  <img src="public/css/img/playhand.png" class="chess_icon_home">
+                  
+                  <div class="home_text">
+                  <span >Play Online</span><br>
+                  <span class="mini_text">Play against people like you</span>
+                </div>
+              </div>
+              <div  class="grey_btn home_btn" onlick="window.location='/play'"">
+                <img src="public/css/img/computer.png" class="chess_icon_home">
+           
+                <div class="home_text">
+                  <span >Or vs 'Computer'</span><br>
+                  <span class="mini_text">Play against CPU of your level</span>
+                </div>
+              </div>
+              </div>
+           
+            </div>
+
+          </section>
+
+          <section id="yes">
+              <div class="home_example">
+                
+              <div class="chess_welcome example">
+                <h1>Enhance your skills </h1>  
+
+                <div class="grn_btn example_btn" onlick="window.location='/study'">Study</div>
+
+                <div class="quote">
+                  <img src="/public/css/img/hikaru.jpg">
+                  <div class="quote_text">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea praesentium velit nostrum aperiam cum. Facere impedit velit at natus! Nam?</p>
+                    <br><h5><span class="rank">GM</span> Hikaru Nakamura</h5>
+                  </div>
+                </div>
+              </div>
+                <img src="public/css/img/chessboard2.png" class="chessboard1_img">
+          
+
+              </div>
+
+
+              <div class="home_example second">
+                
+               
+                  <img src="public/css/img/chessboard3.jpg" class="chessboard1_img">
+                  <div class="chess_welcome example">
+                    <h1>Track your progress </h1>  
+    
+                    <div class="grn_btn example_btn"  onlick="window.location='/statistics'">Statistics</div>
+    
+                    <div class="quote">
+                      <img src="/public/css/img/rudolf.jpg">
+                      <div class="quote_text">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea praesentium velit nostrum aperiam cum. Facere impedit velit at natus! Nam?</p>
+                        <br><h5><span class="rank">GM</span> Hikaru Nakamura</h5>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+
+
+          </section>
+
+
+
+
+            
+             <%- include('partials/footer') %>
+        </div>
+
+
+    
+      
+</div>
+
+<div class="notification" id="notificat"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+    <script src="public/js/lib/chessboardjs/js/chessboard-1.0.0.min.js"></script>
+    <script>
+
+    </script>
+    </body>
+</html>

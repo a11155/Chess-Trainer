@@ -1,0 +1,1 @@
+I started off with using html, but changed to ejs later on

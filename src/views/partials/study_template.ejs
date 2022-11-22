@@ -1,0 +1,39 @@
+<div class="study_container">
+    <% debuts.forEach((debut) => { %>
+    <div class="study">
+        
+        <div class="study_descr">
+            <h1>
+                <% if(debut.isWhite) {%>
+                <span class="white">W</span>
+                <%} else { %>
+                <span class="black">B</span>
+                <%}%>
+                
+                
+                <%= debut.title %> </h1>
+            <div class="progresses">
+                <div>
+                <label for="dif" class="label_progress">Difficulty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <progress id="dif" max="5" value="<%= debut.difficulty %>">  </progress>
+            </div>
+            <div>
+                <label for="pop" class="label_progress">Popularity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <progress id="pop" max="5" value="<%= debut.popularity %>"> </progress>
+            </div>
+            <div>   
+                <label for="efect" class="label_progress">Effectiveness</label>
+                <progress id="efect" max="5" value="<%= debut.effectiveness %>"> </progress>
+            </div>
+            </div>
+            <div class="text_descr">
+                <p><%= debut.description %></p>
+            </div>
+            <div class="grn_btn" onclick="window.location = '<%= debut.find_more_src %>'">Find out more</div>
+     </div>
+        <img src="<%= debut.img_src %>">
+    
+    </div>
+    <% }) %>
+
+</div>
