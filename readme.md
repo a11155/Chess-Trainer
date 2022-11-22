@@ -1,2 +1,1 @@
-#
-Chess-Trainer
+# Chess-Trainer
