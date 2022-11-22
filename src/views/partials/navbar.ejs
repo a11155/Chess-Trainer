@@ -1,0 +1,24 @@
+<nav class="home-header">
+    <a href="/home" class="logo">Chess Trainer</a>
+    <button class="header__btn_open-topnav header__btn"><span class="icon-menu-open"></span></button>
+    <ul class="topnav topnav_mobile_show">
+      <button class="header__btn_close-topnav header__btn"><span class="icon-menu-close"></span></button>
+      
+      <li class="topnav__item">
+        <div class="grn_btn__link" onclick="window.location='/play'">Play</div>
+      </li>
+      <li class="topnav__item">
+        <div class="grn_btn__link" onclick="window.location='/study'">Study</div>
+      </li>
+      
+      <li class="topnav__item">
+        <div class="grn_btn__link" onclick="window.location='/statistics'">Statistics</div>
+      </li>
+      <li class="topnav__item" >
+        <div class="grn_btn__link" onclick="document.getElementById(logout_form.submit())">
+          <i class="fa fa-sign-out"></i></div>
+        <form style="display: none" id="logout_form" action="/logout" method="post">
+        </form>
+      </li>
+    </ul>
+</nav>

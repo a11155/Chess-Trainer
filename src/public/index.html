@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chess Quiz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./public/css/style.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+         <link rel="icon" type="image/x-icon" href="/public/css/img/chess-logo.ico">
+    </head>
+    <body>
+
+        <div class="header">
+                <div class="grn_btn big_btn" onclick="location.href = '#what';">
+                   Chess Trainer
+                </div>  
+                <div class="grn_btn">
+                    Enhance your tactics with <strong>PRACTICE</strong>
+                </div>
+            </div>
+
+            <div class="transition-2">
+
+            </div>
+            <div class="transition-1">
+
+            </div>
+        
+        <div class="content">
+
+           <section id="what">
+            <h1 id="df" class="headline">What is this ??</h1>
+            <br>
+            <p style="text-align: center;">Chess Trainer is a chess puzzle game that helps you understand the basics needed for success</p>
+
+            <div   onclick="customAlert.alert('This is a custom alert with heading.','Heads Up!')" style="margin:auto; margin-top: 30px" class="grn_btn big_btn w400">
+                <img src="public/css/img/chess.png" class="chess_icon">
+                <span class="start_text">Start</span>
+            </div>
+            </section>
+            <section id="why">
+
+            <h1 class="headline">Why Us?</h1>
+
+            <div class="flex_container_row">
+                <div class="card">
+                    <img src="public/css/img/wise.png" alt="Avatar" style="width:100%">
+                    <div class="card_container">
+                      <h4><b>Skill</b></h4>
+                      <p>Get better at the game of chess by solving numerous real problems</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <img src="public/css/img/consistency.png" alt="Avatar" style="width:100%">
+                    <div class="card_container">
+                      <h4><b>Consistensy</b></h4>
+                      <p>Be able to consistently identify the best moves in any position</p>
+                    </div>
+                  </div>
+
+
+                  <div class="card">
+                    <img src="public/css/img/fast.png" alt="Avatar" style="width:100%">
+                    <div class="card_container">
+                      <h4><b>Speed</b></h4>
+                      <p>Be able to identify the best moves in mere seconds</p>
+                    </div>
+                  </div>
+
+
+                  <div class="card">
+                    <img src="public/css/img/success.png" alt="Avatar" style="width:100%">
+                    <div class="card_container">
+                      <h4><b>Guarantee</b></h4>
+                      <p>By practicing you are guaranteed to master the game of chess</p>
+                    </div>
+                  </div>
+
+            </div>
+
+
+            </section>
+
+            <section id="reviews">
+              <h1 class="headline">Our Users</h1>
+              <br>
+
+              <div class="flex_container_row w20">
+                <div class="review">
+                  <img src="public/css/img/review_pawel.jpeg">
+                  <div class="review_description">
+                    <h4><span class="rank">IM</span> Pawel Weichhold</h4> 
+                    
+                    <br>
+                    <p> By using Chess Trainer for a month I increased my ELO rating from 1000 to 
+                      2000 easily. I am very greatfull for the resources they provide and would definetely
+                      recommend it to anyone who wants to improve in their chess
+                    </p>
+                  </div>
+                </div>
+
+
+                <div class="review">
+                  <img src="public/css/img/review_paulo.jpeg">
+                  <div class="review_description">
+                    <h4><span class="rank">GM</span> Pawel Weichhold</h4> 
+                    
+                    <br>
+                    <p> By using Chess Trainer for a month I increased my ELO rating from 1000 to 
+                      2000 easily. I am very greatfull for the resources they provide and would definetely
+                      recommend it to anyone who wants to improve in their chess
+                    </p>
+                  </div>
+                </div>
+
+    
+        
+              </div>
+              </section>
+    
+         
+              <div class="footer-basic">
+                <footer>
+                    <div class="social">
+                      <a href="#"><i class="icon ion-social-instagram"></i></a>
+                      <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                      <a href="#"><i class="icon ion-social-twitter"></i></a>
+                      <a href="#"><i class="icon ion-social-facebook"></i></a>
+                    </div>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li ><a href="/service">Services</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li ><a href="/terms">Terms</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                    </ul>
+                    <p class="copyright">Chess Tactics © 2022
+                    </p>
+                </footer>
+            </div>
+      
+
+
+          
+
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+function CustomAlert(){
+
+
+  this.alert = function(message,title){
+
+    /* If youser has refreshtoken in cookies he doesn't need to login*/
+    $.ajax('/refresh', {
+    type: 'GET',
+  })
+    .done( function (data, status, xhr) {
+        document.cookie = `accessToken=${data.accessToken}`;
+        document.cookie = `refreshToken=${data.refreshToken}`;
+
+        window.location.href = "/home";
+    });
+
+
+
+
+
+
+
+    document.body.innerHTML = document.body.innerHTML + 
+    '<div id="dialogoverlay" onclick=customAlert.ok()>' +
+    '</div>' +
+        '<form action="/login" method="post" id="dialogbox" class="slit-in-vertical" >' +
+            '<div>' +
+              '<div id="dialogboxhead">'+
+                '<img src="public/css/img/chess-logo1.png" >' +
+              '</div>' +
+              '<div id="dialogboxbody">' +
+                  '<p class="error-message" id="error_message"></p>' +
+                  '<input type="email" name="email" id="email" class="email-input" placeholder="Email"/>'+
+                  '<input type="password" name="password"   id="password" class="password-input" placeholder="Password"/>'+
+                 '<div class="grn_btn " onclick="sendLoginRequest(document.getElementById(`email`), document.getElementById(`password`))">'+
+                   'Log in' +
+                '</div>'  +
+                '<a href="/registration"  >' +
+                  'New user? Register!' +
+              '</a>' +
+              '</div>' +
+              '</div>' +
+            '</div>' +
+        '</form>';
+
+    let dialogoverlay = document.getElementById('dialogoverlay');
+    let dialogbox = document.getElementById('dialogbox');
+    
+    let winH = window.innerHeight;
+    dialogoverlay.style.height = winH+"px";
+    
+    dialogbox.style.top = "20vh";
+
+    dialogoverlay.style.display = "block";
+    dialogbox.style.display = "block";
+    
+    document.getElementById('dialogboxhead').style.display = 'block';
+
+    if(typeof title === 'undefined') {
+      document.getElementById('dialogboxhead').style.display = 'none';
+    } else {
+     // document.getElementById('dialogboxhead').innerHTML = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> '+ title;
+    }
+    //document.getElementById('dialogboxbody').innerHTML = message;
+   // document.getElementById('dialogboxfoot').innerHTML = '<button class="pure-material-button-contained active" onclick="customAlert.ok()">OK</button>';
+  }
+  
+  this.ok = function(){
+    document.getElementById('dialogbox').style.display = "none";
+    document.getElementById('dialogoverlay').style.display = "none";
+    document.getElementById("error_message").innerHTML = "";
+
+  }
+}
+
+let customAlert = new CustomAlert();
+
+
+
+function sendLoginRequest(email, password){
+  email = email.value;
+  password =  password.value;
+  
+  $.ajax('/login', {
+    type: 'POST',  // http method
+    data: { email: email, password : password }
+  })
+    .done( function (data, status, xhr) {
+        document.cookie = `accessToken=${data.accessToken}`;
+        document.cookie = `refreshToken=${data.refreshToken}`;
+
+        window.location.href = "/home";
+    })
+    .fail(function (jqXhr, textStatus, errorMessage) {
+      if(jqXhr.status == 400){
+        document.getElementById("error_message").innerHTML = "Incorrect Password";
+      }
+      else if(jqXhr.status == 404){
+        document.getElementById("error_message").innerHTML = "User with this email was not found";
+      }
+      else{
+        document.getElementById("error_message").innerHTML = "Unexpected Error";  
+      }
+    })
+
+}
+            </script>
+        
+    </body>
+</html>
