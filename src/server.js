@@ -40,5 +40,5 @@ db.once('open', () => console.log('database connected'))
 
 
 http.listen(process.env.PORT, () => {
-    console.log("The API is running...")
+    console.log("Server started on localhost:" + process.env.PORT);
 })
