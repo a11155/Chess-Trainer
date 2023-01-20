@@ -1,13 +1,13 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const router = require('./router/index');
+const router = require('./src/router/index');
 const path = require('path') 
 const cors = require('cors') 
 const cookieParser = require('cookie-parser');
-const errorMiddleware = require('./middlewares/error-middleware');
+const errorMiddleware = require('./src/middlewares/error-middleware');
 
-const socketController = require('./controllers/socket-controller');
+const socketController = require('./src/controllers/socket-controller');
 
 
 require('dotenv').config()
@@ -18,10 +18,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));     
 app.use(cors());
 app.use(cookieParser());
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'ejs');
 app.use('/', router);
-app.use(express.static(__dirname))
+app.use(express.static(path.join(__dirname, 'src')));
 
 app.use(errorMiddleware);
 
