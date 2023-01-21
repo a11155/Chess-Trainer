@@ -10,10 +10,10 @@ A training project to sharpen my Back-end development, utilizing Node.js and Mon
 
 ## Screenshots
 
-![App Screenshot](/screenshots/Landing.png);
 ![App Screenshot](/screenshots/Index.png);
-![App Screenshot](/screenshots/Multiplayer.png);
+![App Screenshot](/screenshots/Landing.png);
 ![App Screenshot](/screenshots/Register.png);
+![App Screenshot](/screenshots/Multiplayer.png);
 
 ## Environment Variables
 
